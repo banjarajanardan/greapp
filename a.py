@@ -7,6 +7,8 @@ firebase = firebase.FirebaseApplication('https://collins-gre-8f1e6.firebaseio.co
 # f = open('./abc.csv','r')
 # reader = csv.DictReader(f, fieldnames = ( "word","meaning","example"))
 # a = firebase.get('/', '')
+# if a == None:
+#     a = []
 
 # for i in reader:
 #     flag = 1

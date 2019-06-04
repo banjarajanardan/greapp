@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -19,8 +20,12 @@
 <body>
 	<nav class="navbar navbar-default">
 		<h1>Collins GRE</h1>
-	</nav>
+    </nav>
 	<div class="jumbotron">
+        <form action = "/uploader" method = "POST" enctype = "multipart/form-data">
+            <input type = "file" name = "file" class="btn btn-primary" />
+            <input type = "submit" class="btn btn-primary" style="margin: 10px"/>
+         </form>
 		<form class="form-group" action="/modify" >
             <button class="btn btn-primary" type="submit" name="submit" value="home">Update Database</button>
 		</form>
@@ -39,8 +44,7 @@
                 <td>{{ i['meaning'] }}</td>
                 <td>{{ i['example'] }}</td>
             </tr>
-        {% endfor %}
-        
+        {% endfor %}  
     </table>
 </body>
 </html>
