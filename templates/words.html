@@ -9,38 +9,36 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <style>
     table, th, td {
-        border: 2px solid black;
+        border-bottom: 2px solid black;
         border-collapse: collapse;
         padding-right: 15px;
         padding-left: 15px; 
         border-spacing: 5px;
-        margin-left: 20px;
+        margin: 0.25% 0.5% 0.5% 0.5%;
       }</style>
 </head>
-<body>
-	<nav class="navbar navbar-default">
+<body style="background-color: gray;">
+    <nav class="navbar navbar-inverse" style="background-color: #00fc14; border-style:groove; border-color: #000000; border-radius: 15px; margin: 0.25%; margin-top:0.5%;border-width: 5px">
 		<h1>Collins GRE</h1>
+		<form class="form-group" action="/modify" style="align-self: right;">
+            <button class="btn btn-secondary" type="submit" name="submit" value="home">Home</button>
+        </form>
     </nav>
-	<div class="jumbotron">
-        <form action = "/uploader" method = "POST" enctype = "multipart/form-data">
-            <input type = "file" name = "file" class="btn btn-primary" />
-            <input type = "submit" class="btn btn-primary" style="margin: 10px"/>
-         </form>
-		<form class="form-group" action="/modify" >
-            <button class="btn btn-primary" type="submit" name="submit" value="home">Update Database</button>
-		</form>
-	</div>
 
-
-    <table style="width:70%">
+    <div class="card" style="margin: 0.5% 0.25%; border-style:groove; border-color: #000000; border-radius: 15px; border-width: 5px">
+    <table>
         <tr>
+            <th>S.No.</th>
             <th>Word</th>
+            <th>Parts of Speech</th>
             <th>Meaning</th>
             <th>Example</th>
         </tr>
         {% for i in t %}
             <tr>
+                <td>{{ loop.index }}</td>
                 <td>{{ i["word"] }}</td>
+                <td>{{ i["pos"] }}</td>
                 <td>{{ i['meaning'] }}</td>
                 <td>{{ i['example'] }}</td>
             </tr>
